@@ -1,0 +1,63 @@
+
+Makefile	determinant.h	lab3		main.o
+determinant.c	determinant.o	main.c		trace_lab3.log
+nadusha@Yx-mac OS_Labs % ./lab3 -t 2 -n 5
+=== Параметры запуска ===
+Основной процесс PID: 42105 | Главный поток TID: 0x123fb4
+Размер матрицы: 5 x 5 | Лимит потоков (-t): 2
+
+Исходная матрица:
+  -3.0   -1.0   -3.0   -3.0    1.0 
+   2.0    1.0    0.0    4.0    3.0 
+   0.0   -5.0   -4.0   -5.0   -1.0 
+   3.0   -2.0   -4.0    5.0   -4.0 
+  -1.0   -3.0    2.0   -2.0   -4.0 
+
+[PID: 42105 | TID: 0x123fcb | Поток #0] Обработан столбец 0, вклад = 2232.00
+[PID: 42105 | TID: 0x123fcc | Поток #1] Обработан столбец 1, вклад = 246.00
+[PID: 42105 | TID: 0x123fcc | Поток #1] Обработан столбец 2, вклад = 435.00
+[PID: 42105 | TID: 0x123fcc | Поток #1] Обработан столбец 4, вклад = 130.00
+[PID: 42105 | TID: 0x123fcb | Поток #0] Обработан столбец 3, вклад = -1008.00
+
+=== Результаты ===
+Детерминант: 2035.00
+Время выполнения: 0.000249 сек.
+nadusha@Yx-mac OS_Labs % ./lab3 -t 4 -n 11
+=== Параметры запуска ===
+Основной процесс PID: 42107 | Главный поток TID: 0x124025
+Размер матрицы: 11 x 11 | Лимит потоков (-t): 4
+
+[PID: 42107 | TID: 0x124029 | Поток #3] Обработан столбец 3, вклад = 1058009160.00
+[PID: 42107 | TID: 0x124027 | Поток #1] Обработан столбец 2, вклад = 146490612.00
+[PID: 42107 | TID: 0x124026 | Поток #0] Обработан столбец 0, вклад = 312497436.00
+[PID: 42107 | TID: 0x124028 | Поток #2] Обработан столбец 1, вклад = 296819756.00
+[PID: 42107 | TID: 0x124028 | Поток #2] Обработан столбец 7, вклад = 0.00
+[PID: 42107 | TID: 0x124029 | Поток #3] Обработан столбец 4, вклад = -73815224.00
+[PID: 42107 | TID: 0x124028 | Поток #2] Обработан столбец 8, вклад = 1092430976.00
+[PID: 42107 | TID: 0x124028 | Поток #2] Обработан столбец 10, вклад = 0.00
+[PID: 42107 | TID: 0x124026 | Поток #0] Обработан столбец 6, вклад = 123826816.00
+[PID: 42107 | TID: 0x124027 | Поток #1] Обработан столбец 5, вклад = 56474768.00
+[PID: 42107 | TID: 0x124029 | Поток #3] Обработан столбец 9, вклад = -34905960.00
+
+=== Результаты ===
+Детерминант: 2977828340.00
+Время выполнения: 0.396506 сек.
+nadusha@Yx-mac OS_Labs % ps -M -p $(pgrep lab3)
+ps: option requires an argument -- p
+usage: ps [-AaCcEefhjlMmrSTvwXx] [-O fmt | -o fmt] [-G gid[,gid...]]
+          [-g grp[,grp...]] [-u [uid,uid...]]
+          [-p pid[,pid...]] [-t tty[,tty...]] [-U user[,user...]]
+       ps [-L]
+nadusha@Yx-mac OS_Labs % sudo dtruss -f ./lab3 -t 4 -n 9 2> trace_lab3.log
+
+nadusha@Yx-mac OS_Labs % nano trace_lab3.log
+nadusha@Yx-mac OS_Labs % nano trace_lab3.log
+nadusha@Yx-mac OS_Labs % ls
+Makefile	determinant.h	lab3		main.o
+determinant.c	determinant.o	main.c		trace_lab3.log
+nadusha@Yx-mac OS_Labs % mv trace_lab3.log trace_lab3_1.log
+nadusha@Yx-mac OS_Labs % ls
+Makefile		determinant.o		main.o
+determinant.c		lab3			trace_lab3_1.log
+determinant.h		main.c
+nadusha@Yx-mac OS_Labs % 

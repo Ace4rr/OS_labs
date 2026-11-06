@@ -1,0 +1,76 @@
+dtrace: system integrity protection is on, some features will not be available
+	PID/THRD  SYSCALL(args) 		 = return
+=== Параметры запуска ===
+Основной процесс PID: 42118 | Главный поток TID: 0x1241ab
+Размер матрицы: 9 x 9 | Лимит потоков (-t): 4
+
+[PID: 42118 | TID: 0x1241c0 | Поток #2] Обработан столбец 2, вклад = 543120.00
+[PID: 42118 | TID: 0x1241c1 | Поток #3] Обработан столбец 3, вклад = -4228251.00
+[PID: 42118 | TID: 0x1241bf | Поток #1] Обработан столбец 1, вклад = 106267.00
+[PID: 42118 | TID: 0x1241be | Поток #0] Обработан столбец 0, вклад = -3632310.00
+[PID: 42118 | TID: 0x1241be | Поток #0] Обработан столбец 7, вклад = 0.00
+[PID: 42118 | TID: 0x1241c0 | Поток #2] Обработан столбец 4, вклад = 161950.00
+[PID: 42118 | TID: 0x1241c1 | Поток #3] Обработан столбец 5, вклад = 435366.00
+[PID: 42118 | TID: 0x1241bf | Поток #1] Обработан столбец 6, вклад = 818045.00
+[PID: 42118 | TID: 0x1241be | Поток #0] Обработан столбец 8, вклад = 1486948.00
+
+=== Результаты ===
+Детерминант: -4308865.00
+Время выполнения: 0.004856 сек.
+dtrace: error on enabled probe ID 1700 (ID 963: syscall::write_nocancel:return): invalid kernel access in action #13 at DIF offset 68
+42118/0x1241ab:  fork()		 = 0 0
+42118/0x1241ab:  access("/AppleInternal/XBS/.isChrooted\0", 0x0, 0x0)		 = -1 2
+42118/0x1241ab:  bsdthread_register(0x7FF8158F2F5C, 0x7FF8158F2F48, 0x2000)		 = 1073742303 0
+42118/0x1241ab:  shm_open(0x7FF8157C0F5D, 0x0, 0x157BF78A)		 = 3 0
+42118/0x1241ab:  fstat64(0x3, 0x7FF7B1739290, 0x0)		 = 0 0
+42118/0x1241ab:  mmap(0x0, 0x2000, 0x1, 0x40001, 0x3, 0x0)		 = 0x10E8D7000 0
+42118/0x1241ab:  close(0x3)		 = 0 0
+42118/0x1241ab:  ioctl(0x2, 0x4004667A, 0x7FF7B1739344)		 = -1 25
+42118/0x1241ab:  ioctl(0x2, 0x40487413, 0x7FF7B1739348)		 = -1 25
+42118/0x1241ab:  mprotect(0x10E8DE000, 0x1000, 0x0)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8E3000, 0x1000, 0x0)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8E4000, 0x1000, 0x0)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8E9000, 0x1000, 0x0)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8D9000, 0x90, 0x1)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8D9000, 0x90, 0x3)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8D9000, 0x90, 0x1)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8EA000, 0x1000, 0x1)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8EB000, 0x90, 0x1)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8EB000, 0x90, 0x3)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8EB000, 0x90, 0x1)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8D9000, 0x90, 0x3)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8D9000, 0x90, 0x1)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8EA000, 0x1000, 0x3)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E8EA000, 0x1000, 0x1)		 = 0 0
+42118/0x1241ab:  issetugid(0x0, 0x0, 0x0)		 = 0 0
+42118/0x1241ab:  getentropy(0x7FF7B1739220, 0x20, 0x0)		 = 0 0
+42118/0x1241ab:  getentropy(0x7FF7B1739280, 0x40, 0x0)		 = 0 0
+42118/0x1241ab:  getpid(0x0, 0x0, 0x0)		 = 42118 0
+42118/0x1241ab:  stat64("/AppleInternal\0", 0x7FF7B1739860, 0x0)		 = -1 2
+42118/0x1241ab:  csops_audittoken(0xA486, 0x10, 0x7FF7B17393A0)		 = -1 22
+42118/0x1241ab:  proc_info(0x2, 0xA486, 0xD)		 = 64 0
+42118/0x1241ab:  csops_audittoken(0xA486, 0x10, 0x7FF7B1739470)		 = -1 22
+42118/0x1241ab:  sysctlbyname(kern.osvariant_status, 0x15, 0x7FF7B17398A8, 0x7FF7B17398B0, 0x0)		 = 0 0
+42118/0x1241ab:  csops(0xA486, 0x0, 0x7FF7B17398E4)		 = 0 0
+42118/0x1241ab:  mprotect(0x10E7D5000, 0x100000, 0x1)		 = 0 0
+42118/0x1241ab:  getrlimit(0x1008, 0x7FF7B173A830, 0x0)		 = 0 0
+42118/0x1241ab:  fstat64(0x1, 0x7FF7B173A818, 0x0)		 = 0 0
+42118/0x1241ab:  bsdthread_create(0x10E7C83F0, 0x60000139C000, 0x70000D352000)		 = 221585408 0
+42118/0x1241ab:  bsdthread_create(0x10E7C83F0, 0x60000139C010, 0x70000D3D5000)		 = 222121984 0
+42118/0x1241be:  fork()		 = 0 0
+42118/0x1241be:  thread_selfid(0x0, 0x0, 0x0)		 = 1196478 0
+42118/0x1241bf:  fork()		 = 0 0
+42118/0x1241bf:  thread_selfid(0x0, 0x0, 0x0)		 = 1196479 0
+42118/0x1241ab:  bsdthread_create(0x10E7C83F0, 0x60000139C020, 0x70000D458000)		 = 222658560 0
+42118/0x1241c0:  fork()		 = 0 0
+42118/0x1241c0:  thread_selfid(0x0, 0x0, 0x0)		 = 1196480 0
+42118/0x1241ab:  bsdthread_create(0x10E7C83F0, 0x60000139C030, 0x70000D4DB000)		 = 223195136 0
+42118/0x1241c1:  fork()		 = 0 0
+42118/0x1241c1:  thread_selfid(0x0, 0x0, 0x0)		 = 1196481 0
+42118/0x1241c0:  __disable_threadsignal(0x1, 0x0, 0x0)		 = 0 0
+42118/0x1241c1:  __disable_threadsignal(0x1, 0x0, 0x0)		 = 0 0
+42118/0x1241bf:  __disable_threadsignal(0x1, 0x0, 0x0)		 = 0 0
+42118/0x1241be:  __disable_threadsignal(0x1, 0x0, 0x0)		 = 0 0
+42118/0x1241be:  ulock_wake(0x1000002, 0x70000D352034, 0x0)		 = 0 0
+42118/0x1241ab:  ulock_wait(0x1020002, 0x70000D352034, 0x907)		 = 0 0
+

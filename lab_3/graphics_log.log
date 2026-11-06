@@ -1,0 +1,53 @@
+
+nadusha@Yx-mac OS_Labs % ./lab3 -t 1 -n 12 > /dev/null & sleep 1; ps -M -p $!; wait
+[1] 42224
+USER      PID   TT   %CPU STAT PRI     STIME     UTIME COMMAND
+nadusha 42224 s000    0,0 S    31T   0:00.00   0:00.00 ./lab3 -t 1 -n 12
+        42224        96,9 R    31T   0:00.00   0:00.98 
+[1]  + done       ./lab3 -t 1 -n 12 > /dev/null
+nadusha@Yx-mac OS_Labs % ./lab3 -t 2 -n 12 > /dev/null & sleep 1; ps -M -p $!; wait
+[1] 42228
+USER      PID   TT   %CPU STAT PRI     STIME     UTIME COMMAND
+nadusha 42228 s000    0,0 S    31T   0:00.00   0:00.00 ./lab3 -t 2 -n 12
+        42228        95,4 R    31T   0:00.00   0:00.97 
+        42228        93,1 R    31T   0:00.00   0:00.97 
+[1]  + done       ./lab3 -t 2 -n 12 > /dev/null
+nadusha@Yx-mac OS_Labs % ./lab3 -t 4 -n 12 > /dev/null & sleep 1; ps -M -p $!; wait
+[1] 42233
+USER      PID   TT   %CPU STAT PRI     STIME     UTIME COMMAND
+nadusha 42233 s000    0,0 S    31T   0:00.00   0:00.00 ./lab3 -t 4 -n 12
+        42233        97,9 R    31T   0:00.00   0:00.99 
+        42233        98,2 R    31T   0:00.00   0:00.99 
+        42233        98,3 R    31T   0:00.00   0:00.98 
+        42233        97,5 R    31T   0:00.00   0:00.97 
+[1]  + done       ./lab3 -t 4 -n 12 > /dev/null
+nadusha@Yx-mac OS_Labs % ./lab3 -t 8 -n 12 > /dev/null & sleep 1; ps -M -p $!; wait
+[1] 42237
+USER      PID   TT   %CPU STAT PRI     STIME     UTIME COMMAND
+nadusha 42237 s000    0,0 S    31T   0:00.00   0:00.00 ./lab3 -t 8 -n 12
+        42237        47,2 R     1T   0:00.00   0:00.49 
+        42237        47,7 R     1T   0:00.00   0:00.49 
+        42237        49,6 R     0T   0:00.00   0:00.49 
+        42237        47,2 R     2T   0:00.00   0:00.48 
+        42237        46,9 R     1T   0:00.00   0:00.49 
+        42237        47,5 R     0T   0:00.00   0:00.49 
+        42237        48,8 R     0T   0:00.00   0:00.49 
+        42237        46,6 R     1T   0:00.00   0:00.48 
+[1]  + done       ./lab3 -t 8 -n 12 > /dev/null
+nadusha@Yx-mac OS_Labs % ./lab3 -t 16 -n 12 > /dev/null & sleep 1; ps -M -p $!; wait
+[1] 42241
+USER      PID   TT   %CPU STAT PRI     STIME     UTIME COMMAND
+nadusha 42241 s000    0,0 S    31T   0:00.00   0:00.00 ./lab3 -t 16 -n 12
+        42241        37,6 R    11T   0:00.00   0:00.38 
+        42241        37,9 R    10T   0:00.00   0:00.38 
+        42241        38,1 R    10T   0:00.00   0:00.37 
+        42241        38,5 R    10T   0:00.00   0:00.38 
+        42241        38,8 R    10T   0:00.00   0:00.39 
+        42241        37,7 R    10T   0:00.00   0:00.37 
+        42241        39,0 R    10T   0:00.00   0:00.40 
+        42241        36,7 R    12T   0:00.00   0:00.39 
+        42241        37,2 R    11T   0:00.00   0:00.38 
+        42241        38,3 R    10T   0:00.00   0:00.38 
+[1]  + done       ./lab3 -t 16 -n 12 > /dev/null
+nadusha@Yx-mac OS_Labs % 
+
